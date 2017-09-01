@@ -1,0 +1,14 @@
+.card-image {
+  width: 50%;
+}
+
+.buttons {
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card-image {
+  display:block;
+  margin: auto;
+}

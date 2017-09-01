@@ -1,68 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <div class="banner">
-    <img width="100%" src="/assets/pubg-banner.png">
+    <img width="100%" src="/assets/images/pubg-banner.png">
   </div>
   <md-toolbar class="header">
     <span>WELCOME TO THE PUBG SHOP!</span>
   </md-toolbar>
+
+
+  <!--title: string,-->
+  <!--price: number,-->
+  <!--discount: number,-->
+  <!--imageUrl: string,-->
+  <!--content: string-->
+
   <div class="container">
-    <div class="card-1">
+
+    <div class="product" *ngFor="let product of products">
       <md-card>
         <md-card-header>
           <div class="card-header">
-            <md-card-title class="card-title">Camo Cap</md-card-title>
-            <md-card-subtitle class="card-discount">40% Off</md-card-subtitle>
-            <md-card-subtitle class="card-price">$6.45</md-card-subtitle>
+            <md-card-title class="card-title">{{product.title}}</md-card-title>
+            <md-card-subtitle class="card-discount">{{product.discount}}%</md-card-subtitle>
+            <md-card-subtitle class="card-price">${{product.price}}</md-card-subtitle>
           </div>
         </md-card-header>
 
-        <img md-card-image src="https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhx3qr2q44kS6-IaJcTfw/256fx256f" alt="Photo of a Shiba Inu">
+        <img md-card-image class="card-image" src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
         <md-card-content class="card-content">
-          <p>Fancy camouflage hat to replace the pointless helmet most people wear</p>
+          <p>{{product.content}}</p>
         </md-card-content>
         <md-card-actions>
-          <button class="card-button" md-button md-raised-button="">BUY NOW</button>
-        </md-card-actions>
-      </md-card>
-    </div>
-
-    <div class="card-2">
-      <md-card>
-        <md-card-header>
-          <md-card-title>Camo Cap</md-card-title>
-          <md-card-subtitle>40% Off</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image src="https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhx3qr2q44kS6-IaJcTfw/256fx256f" alt="Photo of a Shiba Inu">
-        <md-card-content>
-          <p>Fancy camouflage hat to replace the pointless helmet most people wear</p>
-        </md-card-content>
-        <md-card-actions>
-          <button md-button md-raised-button="">BUY NOW</button>
-        </md-card-actions>
-      </md-card>
-    </div>
-
-    <div class="card-3">
-      <md-card>
-        <md-card-header>
-          <md-card-title>Camo Cap</md-card-title>
-          <md-card-subtitle>40% Off</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image src="https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhx3qr2q44kS6-IaJcTfw/256fx256f" alt="Photo of a Shiba Inu">
-        <md-card-content>
-          <p>Fancy camouflage hat to replace the pointless helmet most people wear</p>
-        </md-card-content>
-        <md-card-actions>
-          <button md-button md-raised-button="">BUY NOW</button>
+          <button (click)="openConfirmationDialog(product)"class="card-button" md-button md-raised-button >BUY NOW</button>
         </md-card-actions>
       </md-card>
     </div>
   </div>
-
+  <div class="footer">
+    <md-toolbar class="footer-text">
+      <span>Copyright © 2017 Alex Janousek<br><a target="_blank" href="https://github.com/janouser11/info465basicwebsite"><img width="30%" src="/assets/images/github.png"></a></span>
+    </md-toolbar>
+  </div>
 </div>
 
-<div>
-</div>
+
+
 
 
