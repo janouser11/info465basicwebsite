@@ -12,6 +12,7 @@ export class ConfirmationDialogComponent implements OnInit {
 
   public confirmMessage:string;
   public imageUrl: string;
+  public price : number;
 
   ngOnInit() {
   }

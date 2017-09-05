@@ -95,6 +95,7 @@ md-card {
 
 .card-image {
   margin: 0 auto 10px;
+  width: 250px;
 }
 
 .footer-text {
@@ -103,6 +104,10 @@ md-card {
 .footer-text span{
   margin: 0 auto;
   font-size: small;
+}
+
+.card {
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {

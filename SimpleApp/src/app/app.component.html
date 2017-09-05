@@ -17,16 +17,16 @@
   <div class="container">
 
     <div class="product" *ngFor="let product of products">
-      <md-card>
+      <md-card class="card">
         <md-card-header>
           <div class="card-header">
             <md-card-title class="card-title">{{product.title}}</md-card-title>
-            <md-card-subtitle class="card-discount">{{product.discount}}%</md-card-subtitle>
-            <md-card-subtitle class="card-price">${{product.price}}</md-card-subtitle>
+            <md-card-subtitle class="card-discount">{{product.discount | number}}%</md-card-subtitle>
+            <md-card-subtitle class="card-price">${{product.price | number}}</md-card-subtitle>
           </div>
         </md-card-header>
 
-        <img md-card-image class="card-image" src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
+        <img md-card-image class="card-image" src="{{product.imageUrl}}">
         <md-card-content class="card-content">
           <p>{{product.content}}</p>
         </md-card-content>

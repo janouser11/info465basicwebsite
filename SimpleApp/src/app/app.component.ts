@@ -24,8 +24,9 @@ export class AppComponent implements OnInit{
     this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       disableClose: false
     });
-    this.dialogRef.componentInstance.confirmMessage = `Are you sure you wish to buy ${product.title} ?`;
+    this.dialogRef.componentInstance.confirmMessage = `Are you sure you wish to buy ${product.title} for $${product.price}?`;
     this.dialogRef.componentInstance.imageUrl = product.imageUrl;
+
 
     this.dialogRef.afterClosed().subscribe(result => {
       if(result) {
@@ -43,6 +44,4 @@ export class AppComponent implements OnInit{
         error => console.log(error)
       );
   }
-
-
 }

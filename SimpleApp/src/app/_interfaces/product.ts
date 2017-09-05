@@ -1,6 +1,6 @@
 export interface IProduct {
     title: string,
-    price: number,
+    price: any,
     discount: number,
     imageUrl: string,
     content: string

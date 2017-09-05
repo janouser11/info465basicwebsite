@@ -1,52 +1,52 @@
 [
   {
     "title": "Camo Hat",
-    "price": 5.50,
+    "price": 1.55,
     "discount": 10,
     "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhx3qr2q44kS6-IaJcTfw/256fx256f",
-    "content": "Fancy camouflage hat to replace the pointless helmet most people wear"
+    "content": "Fancy camouflage hat to replace the pointless helmet most people wear."
   },
   {
     "title": "Camo Shorts",
-    "price": 6.50,
+    "price": 2.25,
     "discount": 20,
     "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmh13qr2ro4kS69dwhWs9g/256fx256f",
-    "content": "Camouflaged shorts to hide that white..."
+    "content": "Camouflaged shorts to help with being a bush wookie."
   },
   {
     "title": "Fancy Boots",
-    "price": 3.50,
+    "price": 3.45,
     "discount": 30,
     "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
     "content": "Obnoxious boots to alert your enemies with!"
   },
   {
-    "title": "Fancy Boots",
-    "price": 3.50,
-    "discount": 30,
-    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
-    "content": "Obnoxious boots to alert your enemies with!"
+    "title": "Classy Shirt (Black)",
+    "price": 4.15,
+    "discount": 15,
+    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh23qr2qY4kS6_K8ZfN1Q/256fx256f",
+    "content": "Gotta look sharp while hunting for that chicken dinner!"
   },
   {
-    "title": "Fancy Boots",
-    "price": 3.50,
-    "discount": 30,
-    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
-    "content": "Obnoxious boots to alert your enemies with!"
+    "title": "Women's Jacket",
+    "price": 8.85,
+    "discount": 10,
+    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhy3qr2ro4kS68bqQ6fBw/256fx256f",
+    "content": "Screw camo! Stay classy!"
   },
   {
-    "title": "Fancy Boots",
-    "price": 3.50,
-    "discount": 30,
-    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
-    "content": "Obnoxious boots to alert your enemies with!"
+    "title": "Basic School Shirt",
+    "price": 2.85,
+    "discount": 20,
+    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmh23qr2ro4kS6_aVBww8g/256fx256f",
+    "content": "Perfect shirt to wear when dropping at school"
   },
   {
-    "title": "Fancy Boots",
-    "price": 3.50,
-    "discount": 30,
-    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
-    "content": "Obnoxious boots to alert your enemies with!"
+    "title": "Trenchcoat",
+    "price": 30.52,
+    "discount": 5,
+    "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhy3qr2oo4kS68UtFKiCg/256fx256f",
+    "content": "Want to look like an assassin? Buy this."
   }
 
 ]
