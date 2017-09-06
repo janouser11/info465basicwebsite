@@ -1,21 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+
   <div class="banner">
     <img width="100%" src="/assets/images/pubg-banner.png">
   </div>
+
   <md-toolbar class="header">
     <span>WELCOME TO THE PUBG SHOP!</span>
   </md-toolbar>
 
-
-  <!--title: string,-->
-  <!--price: number,-->
-  <!--discount: number,-->
-  <!--imageUrl: string,-->
-  <!--content: string-->
-
   <div class="container">
-
     <div class="product" *ngFor="let product of products">
       <md-card class="card">
         <md-card-header>
@@ -25,7 +19,6 @@
             <md-card-subtitle class="card-price">${{product.price | number}}</md-card-subtitle>
           </div>
         </md-card-header>
-
         <img md-card-image class="card-image" src="{{product.imageUrl}}">
         <md-card-content class="card-content">
           <p>{{product.content}}</p>
