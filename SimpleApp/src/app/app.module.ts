@@ -8,6 +8,10 @@ import {MdToolbarModule} from '@angular/material';
 import {ProductService} from "./_services/product.service";
 import {ConnectionBackend, Http, HttpModule} from "@angular/http";
 import {ConfirmationDialogComponent} from "./_components/confirmation-dialog/confirmation-dialog.component";
+import { AngularFireModule,  } from 'angularfire2';
+import {firebaseConfig} from "../environments/firebase.config";
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import {ConfirmationDialogComponent} from "./_components/confirmation-dialog/con
     MdButtonModule,
     MdToolbarModule,
     HttpModule,
-    MdDialogModule
+    MdDialogModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+
   ],
   providers: [ ProductService],
   bootstrap: [AppComponent],
