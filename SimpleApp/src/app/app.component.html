@@ -1,17 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+      <div style="text-align:center">
 
-  <div class="banner">
-    <img width="100%" src="/assets/images/pubg-banner.png">
-  </div>
+        <div class="banner">
+          <img width="100%" src="/assets/images/pubg-banner.png">
+        </div>
 
-  <md-toolbar class="header">
-    <span>WELCOME TO THE PUBG SHOP!</span>
-  </md-toolbar>
+        <md-toolbar class="header">
+          <span>WELCOME TO THE PUBG SHOP!</span>
+        </md-toolbar>
 
-  <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.$value}}
+        <ul>
+          <li class="text" *ngFor="let item of items | async">
+            {{item.content}}
     </li>
   </ul>
 

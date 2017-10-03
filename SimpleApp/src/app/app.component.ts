@@ -19,24 +19,51 @@ export class AppComponent implements OnInit{
   items: FirebaseListObservable<any[]>;
 
   private _productService: ProductService;
-
+  // https://github.com/angular/angularfire2/blob/master/docs/2-retrieving-data-as-objects.md
   constructor(service: ProductService, public dialog: MdDialog, db: AngularFireDatabase, afAuth: AngularFireAuth) {
       this._productService = service;
       //pulls items from list
-      this.items = db.list('items');
+      this.items = db.list('products');
+
+
+
+    //set overwrites anything
+    let itemRef = db.object('products');
+    itemRef.set({
+      product1: {
+        "title": "Camo Hat",
+        "price": 1.55,
+        "discount": 10,
+        "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmhx3qr2q44kS6-IaJcTfw/256fx256f",
+        "content": "Fancy camouflage hat to replace the pointless helmet most people wear."
+      },
+      product2: {
+        "title": "Camo Shorts",
+        "price": 2.25,
+        "discount": 20,
+        "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQvrmh13qr2ro4kS69dwhWs9g/256fx256f",
+        "content": "Camouflaged shorts to help with being a bush wookie."
+      }
+    });
+
     //create items
-    //update
-    db.list('testing4').set("setting", {
-      username: "name",
-      email: "email",
-      profile_picture : "imageurl"
+    let itemRef2 = db.object('products');
+    itemRef2.update({
+      product3:  {
+        "title": "Fancy Boots",
+        "price": 3.45,
+        "discount": 30,
+        "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
+        "content": "Obnoxious boots to alert your enemies with!"
+      }
     });
 
 
-      // removes items
-      // db.list('items').remove();
 
-      afAuth.auth.signInAnonymously();
+      // removes items
+      // db.list('products').remove("product1");
+
+      // afAuth.auth.signInAnonymously();
 
   }
 
