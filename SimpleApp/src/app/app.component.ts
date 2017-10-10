@@ -6,12 +6,14 @@ import {ConfirmationDialogComponent} from "./_components/confirmation-dialog/con
 import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 import {AngularFireAuth} from "angularfire2/auth";
 import {auth} from "firebase/app";
+import {LoginService} from "./_services/login.service";
+
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
   products: IProduct;
@@ -56,7 +58,10 @@ export class AppComponent implements OnInit{
         "imageUrl": "https://steamcommunity-a.opskins.media/economy/image/8HAGSsiO9OXk0bu4o76O6xabNUY8RRLf00e56zWT3IZUH8Flab9goIFna_837oFuZVQtrmh03qr2ro4kS6_uYYfxqg/256fx256f",
         "content": "Obnoxious boots to alert your enemies with!"
       }
+
     });
+
+
 
 
 
@@ -94,8 +99,28 @@ export class AppComponent implements OnInit{
     });
   }
 
+  //need to create new component called login-dialog that displays simple username and password input
+  //get the username and password and store it in a object called user
+  openLogin(product: IProduct) {
+    this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      disableClose: false
+    });
+    this.dialogRef.componentInstance.confirmMessage = `Are you sure you wish to buy ${product.title} for $${product.price}?`;
+    this.dialogRef.componentInstance.imageUrl = product.imageUrl;
+
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        // do confirmation actions
+        //set login = true;
+      }
+      this.dialogRef = null;
+    });
+  }
+
 
   ngOnInit(): void{
+    // this._loginService.checkCredentials();
     this._productService.getData()
       .subscribe(
         data => {this.products = data;},

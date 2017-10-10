@@ -1,48 +1,52 @@
 <!--The content below is only a placeholder and can be replaced.-->
-      <div style="text-align:center">
+<div class="home-body" style="text-align:center">
 
-        <div class="banner">
-          <img width="100%" src="/assets/images/pubg-banner.png">
-        </div>
-
-        <md-toolbar class="header">
-          <span>WELCOME TO THE PUBG SHOP!</span>
-        </md-toolbar>
-
-        <ul>
-          <li class="text" *ngFor="let item of items | async">
-            {{item.content}}
-    </li>
-  </ul>
-
-  <div class="container">
-    <div class="product" *ngFor="let product of products">
-      <md-card class="card">
-        <md-card-header>
-          <div class="card-header">
-            <md-card-title class="card-title">{{product.title}}</md-card-title>
-            <md-card-subtitle class="card-discount">{{product.discount | number}}%</md-card-subtitle>
-            <md-card-subtitle class="card-price">${{product.price | number}}</md-card-subtitle>
-          </div>
-        </md-card-header>
-        <img md-card-image class="card-image" src="{{product.imageUrl}}">
-        <md-card-content class="card-content">
-          <p>{{product.content}}</p>
-        </md-card-content>
-        <md-card-actions>
-          <button (click)="openConfirmationDialog(product)"class="card-button" md-button md-raised-button >BUY NOW</button>
-        </md-card-actions>
-      </md-card>
-    </div>
+  <div class="banner">
+    <img width="100%" src="/assets/images/pubg-banner.png">
   </div>
-  <div class="footer">
-    <md-toolbar class="footer-text">
-      <span>Copyright © 2017 Alex Janousek<br><a target="_blank" href="https://github.com/janouser11/info465basicwebsite"><img width="30%" src="/assets/images/github.png"></a></span>
-    </md-toolbar>
-  </div>
+
+<div class="admin-button">
+  <button md-raised-button class="custom-button" (click)="openLogin()">Admin Login</button>
 </div>
 
 
+<md-toolbar class="header">
+  <span>WELCOME TO THE PUBG SHOP!</span>
+</md-toolbar>
 
 
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.content}}
+  </li>
+</ul>
+
+
+<div class="container">
+  <div class="product" *ngFor="let product of products">
+    <md-card class="card">
+      <md-card-header>
+        <div class="card-header">
+          <md-card-title class="card-title">{{product.title}}</md-card-title>
+          <md-card-subtitle class="card-discount">{{product.discount | number}}%</md-card-subtitle>
+          <md-card-subtitle class="card-price">${{product.price | number}}</md-card-subtitle>
+        </div>
+      </md-card-header>
+      <img md-card-image class="card-image" src="{{product.imageUrl}}">
+      <md-card-content class="card-content">
+        <p>{{product.content}}</p>
+      </md-card-content>
+      <md-card-actions>
+        <button (click)="openConfirmationDialog(product)" class="card-button" md-button md-raised-button>BUY NOW
+        </button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</div>
+<div class="footer">
+  <md-toolbar class="footer-text">
+    <span>Copyright © 2017 Alex Janousek<br><a target="_blank" href="https://github.com/janouser11/info465basicwebsite"><img
+      width="30%" src="/assets/images/github.png"></a></span>
+  </md-toolbar>
+</div>
 
