@@ -101,13 +101,12 @@ export class AppComponent implements OnInit{
 
   //need to create new component called login-dialog that displays simple username and password input
   //get the username and password and store it in a object called user
-  openLogin(product: IProduct) {
+  openLogin() {
     this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       disableClose: false
     });
-    this.dialogRef.componentInstance.confirmMessage = `Are you sure you wish to buy ${product.title} for $${product.price}?`;
-    this.dialogRef.componentInstance.imageUrl = product.imageUrl;
 
+    this.dialogRef.componentInstance.login = true;
 
     this.dialogRef.afterClosed().subscribe(result => {
       if(result) {

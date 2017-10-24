@@ -12,6 +12,7 @@ import { AngularFireModule,  } from 'angularfire2';
 import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {AngularFireAuthModule} from "angularfire2/auth";
     MdDialogModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
 
   ],
   providers: [ ProductService],
