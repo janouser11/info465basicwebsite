@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MdCardModule, MdDialogModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule} from '@angular/material';
-import {MdToolbarModule} from '@angular/material';
+
+import {
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatDialog,
+} from '@angular/material';
 import {ProductService} from "./_services/product.service";
 import {ConnectionBackend, Http, HttpModule} from "@angular/http";
 import {ConfirmationDialogComponent} from "./_components/confirmation-dialog/confirmation-dialog.component";
 import { AngularFireModule,  } from 'angularfire2';
 import {firebaseConfig} from "../environments/firebase.config";
-import {AngularFireDatabaseModule} from "angularfire2/database";
-import {AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import {FormsModule} from "@angular/forms";
+import {MatDialogModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -21,17 +29,30 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    MdCardModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatDialogModule,
+    // MatDialog,
+    // MatDialogRef,
     HttpModule,
-    MdDialogModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     FormsModule
 
+  ],
+  exports: [
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
+    // MatDialog,
+    // MatDialogRef
   ],
   providers: [ ProductService],
   bootstrap: [AppComponent],

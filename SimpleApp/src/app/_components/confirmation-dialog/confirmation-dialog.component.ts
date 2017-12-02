@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MdDialogRef, MdDialog } from '@angular/material';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+// import { MatDialogRef, MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialogModule, MatDialog, MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog'
+
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -9,7 +11,8 @@ import {NgForm} from '@angular/forms';
 })
 export class ConfirmationDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MdDialogRef<ConfirmationDialogComponent>) { }
+  constructor(public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   public confirmMessage:string;
   public imageUrl: string;
@@ -22,7 +25,9 @@ export class ConfirmationDialogComponent implements OnInit {
   }
 
 
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
   loginClick (formUsername, formPassword){
     // this.dialogRef.close(true)
 
