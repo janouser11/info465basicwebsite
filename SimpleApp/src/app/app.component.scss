@@ -49,6 +49,10 @@
   font-size: 1.8em;
   padding-top: 25px;
   padding-bottom: 25px;
+
+  span {
+    margin: 0 auto;
+  }
 }
 
 .card-content {
@@ -103,6 +107,7 @@ md-card {
 
 .footer-text {
   padding: 25px;
+  height: 5%;
 }
 .footer-text span{
   margin: 0 auto;

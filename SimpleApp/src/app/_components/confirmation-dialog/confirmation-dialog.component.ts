@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-// import { MatDialogRef, MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { MatDialogModule, MatDialog, MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog'
-
+import { AngularFirestore,AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import {IProduct} from "../../_interfaces/product";
+import { Observable } from 'rxjs/Observable';
+import {ProductService} from "../../_services/product.service";
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -11,34 +13,38 @@ import {NgForm} from '@angular/forms';
 })
 export class ConfirmationDialogComponent implements OnInit {
 
+  private _productService: ProductService;
+  
   constructor(public dialogRef: MatDialogRef<ConfirmationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private afs: AngularFirestore, service: ProductService) {
+        this._productService = service;
+     }
 
   public confirmMessage:string;
-  public imageUrl: string;
-  public price : number;
-
-  public login: boolean;
+  products: any;
+  product: IProduct = {} as any;
 
 
-  ngOnInit() {
-  }
-
+  ngOnInit(): void{
+       this.products = this._productService.getProducts();
+      }
+    
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-  loginClick (formUsername, formPassword){
-    // this.dialogRef.close(true)
-
-   let username = formUsername;
-   let password = formPassword;
-
-   console.log("Username: " + username + "\nPassword: " + password);
-  }
-
+ 
   closeClick (){
     this.dialogRef.close(false)
+  }
+
+
+  addProduct() {
+    this._productService.addProduct(this.product);
+  }
+
+  deleteProduct(productId) {
+    this._productService.deleteProduct(productId);
   }
 
 }

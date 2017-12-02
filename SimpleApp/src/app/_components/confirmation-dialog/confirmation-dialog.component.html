@@ -5,38 +5,45 @@
   </div>
 
   <div md-dialog-actions class="buttons">
-    <button md-button style="color: #fff;background-color: #153961;" (click)="dialogRef.close(true)">Confirm</button>
-    <button md-button (click)="dialogRef.close(false)">Cancel</button>
+    <button mat-button style="color: #fff;background-color: #153961;" (click)="dialogRef.close(true)">Confirm</button>
+    <button mat-button (click)="dialogRef.close(false)">Cancel</button>
   </div>
 </div>
 
 <ng-container *ngIf="login">
   <div class="container">
     <div class="content">
-      <h1 md-dialog-title>Please Login</h1>
+      <h1 md-dialog-title>Add Product</h1>
       <form>
 
         <!--VALIDATING -->
         <!--user cant press login button if both fields are not filled out
        -->
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" required>
-        </div>
+       <input type="text" [(ngModel)]="product.title" name="product.title" placeholder="Title.." required>
+       <input type="text" [(ngModel)]="product.price" name="price" placeholder="Price.." required>
+       <input type="text" [(ngModel)]="product.discount" name="discount" placeholder="Discount Percentage.." required>
+       <input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" placeholder="Image Url.." required>
+       <textarea [(ngModel)]="product.content" name="content" placeholder="Description.." required></textarea>
+       
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" required >
-        </div>
+       
 
         <div md-dialog-actions class="buttons">
-          <button md-button style="color: #fff; background-color: #153961;" (click)="loginClick()" type="submit">Login</button>
-          <button md-button (click)="closeClick()">Cancel</button>
+          <button mat-button style="color: #fff; background-color: #153961;" (click)="addProduct()" type="submit">Add Product</button>
+          <button mat-button (click)="closeClick()">Cancel</button>
         </div>
 
 
       </form>
     </div>
+
+    <h1>Remove Product(s)</h1>
+    <div class="product" *ngFor="let product of products | async">
+
+      <h3>{{product.data.title}}</h3>
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </div>
+    
 
 
   </div>

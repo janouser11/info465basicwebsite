@@ -1,25 +1,19 @@
 import {Component, OnInit, Inject} from '@angular/core';
 import {ProductService} from "./_services/product.service";
 import {IProduct} from "./_interfaces/product";
-// import {MdDialog, MdDialogRef} from "@angular/material";
 import {
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
   MatCardModule
-  // MatDialog,
-  // MatDialogRef
 } from '@angular/material';
-// import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
 import {ConfirmationDialogComponent} from "./_components/confirmation-dialog/confirmation-dialog.component";
 import { Observable } from 'rxjs/Observable';
-import { AngularFirestore,AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+
 
 import 'rxjs/add/operator/map';
-
-import {LoginService} from "./_services/login.service";
 
 
 
@@ -30,32 +24,24 @@ import {LoginService} from "./_services/login.service";
 })
 export class AppComponent implements OnInit{
 
-  products: IProduct;
-  // dialogRef: MatDialogRef<ConfirmationDialogComponent>;
-  items: Observable<any[]>;
-
-
-  animal: string;
-  name: string;
+  products: any;
   dialogRef: any;
 
   private _productService: ProductService;
-  constructor(service: ProductService, private afs: AngularFirestore, public dialog: MatDialog ) {
+  constructor(service: ProductService, public dialog: MatDialog ) {
       this._productService = service;
   }
 
 
+  ngOnInit(): void{
+        this.products = this._productService.getProducts();
+        console.log(this.products);
+  }
 
-  // login() {
-  //   this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-  // }
-  // logout() {
-  //   this.afAuth.auth.signOut();
-  // }
 
+  //dialog for product
   openConfirmationDialog(product: IProduct) {
-  
-    
+
      this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       disableClose: false
     });
@@ -71,33 +57,25 @@ export class AppComponent implements OnInit{
     });
   }
 
-  // //need to create new component called login-dialog that displays simple username and password input
-  // //get the username and password and store it in a object called user
-  // openLogin() {
-  //   this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-  //     disableClose: false
-  //   });
 
-  //   this.dialogRef.componentInstance.login = true;
+  //dialog for admin functions
+  openAdmin() {
+    this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      disableClose: false
+    });
 
-  //   this.dialogRef.afterClosed().subscribe(result => {
-  //     if(result) {
-  //       // do confirmation actions
-  //       //set login = true;
-  //     }
-  //     this.dialogRef = null;
-  //   });
-  // }
+    this.dialogRef.componentInstance.login = true;
 
-
-  ngOnInit(): void{
-    // this._loginService.checkCredentials();
-    this._productService.getData()
-      .subscribe(
-        data => {this.products = data;},
-        error => console.log(error)
-      );
+    this.dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        // do confirmation actions
+      }
+      this.dialogRef = null;
+    });
   }
+
+
+  
 }
 
 

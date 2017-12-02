@@ -6,7 +6,7 @@
   </div>
 
 <div class="admin-button">
-  <button mat-raised-button class="custom-button" (click)="openLogin()">Admin Login</button>
+  <button mat-raised-button class="custom-button" (click)="openAdmin()">Admin</button>
 </div>
 
 
@@ -15,37 +15,32 @@
 </mat-toolbar>
 
 
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.content}}
-  </li>
-</ul>
-
-
 <div class="container">
-  <div class="product" *ngFor="let product of products">
+  <div class="product" *ngFor="let product of products | async">
     <mat-card class="card">
       <mat-card-header>
         <div class="card-header">
-          <mat-card-title class="card-title">{{product.title}}</mat-card-title>
-          <mat-card-subtitle class="card-discount">{{product.discount | number}}%</mat-card-subtitle>
-          <mat-card-subtitle class="card-price">${{product.price | number}}</mat-card-subtitle>
+          <mat-card-title class="card-title">{{product.data.title}}</mat-card-title>
+          <mat-card-subtitle class="card-discount">{{product.data.discount | number}}%</mat-card-subtitle>
+          <mat-card-subtitle class="card-price">${{product.data.price | number}}</mat-card-subtitle>
         </div>
       </mat-card-header>
-      <img md-card-image class="card-image" src="{{product.imageUrl}}">
+      <img md-card-image class="card-image" src="{{product.data.imageUrl}}">
       <mat-card-content class="card-content">
-        <p>{{product.content}}</p>
+        <p>{{product.data.content}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button (click)="openConfirmationDialog(product)" class="card-button" mat-button mat-raised-button>BUY NOW
+        <button (click)="openConfirmationDialog(product.data)" class="card-button" mat-button mat-raised-button>BUY NOW
         </button>
       </mat-card-actions>
     </mat-card>
   </div>
 </div>
+
+
 <div class="footer">
   <mat-toolbar class="footer-text">
-    <span>Copyright © 2017 Alex Janousek<br><a target="_blank" href="https://github.com/janouser11/info465basicwebsite"><img
+    <span>Copyright © 2017<br><a target="_blank" href="https://github.com/janouser11/info465basicwebsite"><img
       width="30%" src="/assets/images/github.png"></a></span>
   </mat-toolbar>
 </div>
