@@ -1,50 +1,70 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+
 <div class="container" *ngIf="!login">
   <div class="content">
     <h1 md-dialog-title>{{confirmMessage}}</h1>
     <img md-card-image class="card-image" src="{{imageUrl}}">
   </div>
-
   <div md-dialog-actions class="buttons">
     <button mat-button style="color: #fff;background-color: #153961;" (click)="dialogRef.close(true)">Confirm</button>
     <button mat-button (click)="dialogRef.close(false)">Cancel</button>
   </div>
 </div>
 
+
 <ng-container *ngIf="login">
-  <div class="container">
+  <div class="container" style="height: 1000px; padding: 80px;">
     <div class="content">
       <h1 md-dialog-title>Add Product</h1>
-      <form>
 
-        <!--VALIDATING -->
-        <!--user cant press login button if both fields are not filled out
-       -->
-       <input type="text" [(ngModel)]="product.title" name="product.title" placeholder="Title.." required>
-       <input type="text" [(ngModel)]="product.price" name="price" placeholder="Price.." required>
-       <input type="text" [(ngModel)]="product.discount" name="discount" placeholder="Discount Percentage.." required>
-       <input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" placeholder="Image Url.." required>
-       <textarea [(ngModel)]="product.content" name="content" placeholder="Description.." required></textarea>
-       
+      <form style="text-align:center;vertical-align:middle;display:grid;">
 
-       
+      <mat-form-field>
+       <input matInput type="text" [(ngModel)]="product.title" name="product.title" placeholder="Title.." required>
+        </mat-form-field>
+
+      <mat-form-field>
+       <input matInput type="number" [(ngModel)]="product.price" name="price" placeholder="Price.." required>
+        </mat-form-field>
+
+      <mat-form-field>
+       <input matInput type="number" [(ngModel)]="product.discount" name="discount" placeholder="Discount Percentage.." required>
+        </mat-form-field>
+
+      <mat-form-field>
+       <input matInput type="text" [(ngModel)]="product.imageUrl" name="imageUrl" placeholder="Image Url.." required>
+        </mat-form-field>
+
+      <mat-form-field>
+       <textarea matInput id="textarea1" class="materialize-textarea" [(ngModel)]="product.content" name="content" placeholder="Description.." required></textarea>
+        </mat-form-field>
 
         <div md-dialog-actions class="buttons">
-          <button mat-button style="color: #fff; background-color: #153961;" (click)="addProduct()" type="submit">Add Product</button>
-          <button mat-button (click)="closeClick()">Cancel</button>
+          <button name="add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent " mat-button style="color: #fff; background-color: #0e3864;" (click)="addProduct()" type="submit">Add Product</button>
+          <button name="close" mat-button style="color: #fff; background-color: #636060a4;" (click)="closeClick()">Cancel</button>
         </div>
-
-
       </form>
     </div>
 
-    <h1>Remove Product(s)</h1>
+    <h1 style="padding-top: 80px;">Remove Product(s)</h1>
     <div class="product" *ngFor="let product of products | async">
-
-      <h3>{{product.data.title}}</h3>
-      <button (click)="deleteProduct(product.id)">Delete</button>
+      <!-- <div style="text-align: center;"> -->
+        <div>
+          <h3>{{product.data.title}}<button mat-button style="color: #fff; background-color: #cc0000; float: right;" (click)="deleteProduct(product.id)">Delete</button></h3>
+          
+      </div>
+      
     </div>
-    
+
+
+
+
 
 
   </div>
 </ng-container>
+

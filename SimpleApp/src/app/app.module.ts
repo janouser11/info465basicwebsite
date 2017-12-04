@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import 'hammerjs';
 import {
+  MatTabsModule,
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
   MatCardModule,
   MatDialog,
+  MatInputModule,
 } from '@angular/material';
 import {ProductService} from "./_services/product.service";
 import {ConnectionBackend, Http, HttpModule} from "@angular/http";
@@ -22,6 +25,7 @@ import {FormsModule} from "@angular/forms";
 import {MatDialogModule} from '@angular/material';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +34,14 @@ import {MatDialogModule} from '@angular/material';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatTabsModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
     MatDialogModule,
+    MatInputModule,
     // MatDialog,
     // MatDialogRef,
     HttpModule,
@@ -46,11 +52,13 @@ import {MatDialogModule} from '@angular/material';
 
   ],
   exports: [
+    MatTabsModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
     // MatDialog,
     // MatDialogRef
   ],
